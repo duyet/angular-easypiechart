@@ -1,4 +1,4 @@
-# easy-pie-chart
+# angular-easypiechart
 
 > Lightweight plugin to render simple, animated and retina optimized pie charts
 
@@ -32,41 +32,7 @@
 You can also use [bower](http://bower.io) to install the component:
 
 ```
-$ bower install jquery.easy-pie-chart
-```
-
-#### jQuery
-
-To use the easy pie chart plugin you need to load the current version of jQuery (> 1.6.4) and the source of the plugin.
-
-```html
-<div class="chart" data-percent="73" data-scale-color="#ffb400">73%</div>
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-<script src="/path/to/jquery.easy-pie-chart.js"></script>
-<script>
-    $(function() {
-        $('.chart').easyPieChart({
-            //your options goes here
-        });
-    });
-</script>
-```
-
-#### Vanilla JS
-
-If you don't want to use jQuery, implement the Vanilla JS version without any dependencies.
-
-```html
-<div class="chart" data-percent="73">73%</div>
-
-<script src="/path/to/easy-pie-chart.js"></script>
-<script>
-    var element = document.querySelector('.chart');
-    new EasyPieChart(element, {
-        // your options goes here
-    });
-</script>
+$ bower install angular-easypiechart
 ```
 
 #### AngularJS
@@ -186,60 +152,10 @@ All callbacks will only be called if `animate` is not `false`.
 
 
 ## Plugin api
-#### jQuery
-
-```javascript
-$(function() {
-    // instantiate the plugin
-    ...
-    // update
-    $('.chart').data('easyPieChart').update(40);
-    ...
-    // disable animation
-    $('.chart').data('easyPieChart').disableAnimation();
-    ...
-    // enable animation
-    $('.chart').data('easyPieChart').enableAnimation();
-});
-```
-
-#### Vanilla JS
-
-```javascript
-// instantiate the plugin
-var chart = new EasyPieChart(element, options);
-// update
-chart.update(40);
-// disable animation
-chart.disableAnimation();
-// enable animation
-chart.enableAnimation();
-```
-
-###### Using a gradient
-
-```javascript
-new EasyPieChart(element, {
-  barColor: function(percent) {
-    var ctx = this.renderer.getCtx();
-    var canvas = this.renderer.getCanvas();
-    var gradient = ctx.createLinearGradient(0,0,canvas.width,0);
-        gradient.addColorStop(0, "#ffe57e");
-        gradient.addColorStop(1, "#de5900");
-    return gradient;
-  }
-});
-```
 
 #### AngularJS
 
 For a value binding you need to add the `percent` attribute and bind it to your controller.
-
-#### RequireJS
-
-When using [RequireJS](http://requirejs.org) you can define your own name. Examples can be found in the `demo/requirejs.html`.
-
-
 
 ## Browser Support
 Native support
@@ -258,10 +174,10 @@ Support for Internet Explorer 7 and 8 with [excanvas](https://code.google.com/p/
 To run the test just use the karma adapter of grunt: `grunt test`
 
 
-
 ## Credits
-Thanks to [Rafal Bromirski](http://www.paranoida.com/) for designing [this dribble shot](http://drbl.in/ezuc) which inspired me building this plugin.
+Fork from [easy-pie-chart](https://github.com/rendro/easy-pie-chart)
 
+Thanks to [Rafal Bromirski](http://www.paranoida.com/) for designing [this dribble shot](http://drbl.in/ezuc) which inspired me building this plugin.
 
 
 ## Copyright
