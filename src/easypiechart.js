@@ -63,7 +63,7 @@ var EasyPieChart = function(el, opts) {
 		// check for jQuery easing
 		if (typeof(options.easing) === 'string' && typeof(jQuery) !== 'undefined' && jQuery.isFunction(jQuery.easing[options.easing])) {
 			options.easing = jQuery.easing[options.easing];
-		} else {
+		} else if (typeof(options.easing) !== 'function') {
 			options.easing = defaultOptions.easing;
 		}
 
